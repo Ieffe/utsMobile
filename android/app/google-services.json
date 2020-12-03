@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "414224050602",
+    "firebase_url": "https://fir-test-7652b.firebaseio.com",
+    "project_id": "fir-test-7652b",
+    "storage_bucket": "fir-test-7652b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414224050602:android:fe78296fce0e65077363d3",
+        "android_client_info": {
+          "package_name": "com.firebasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414224050602-ukhlsonb58qs3t2e65gh1nba7d8km5jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6MOednpYKns5IrUjduRpq6gil7KVc3Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414224050602-ukhlsonb58qs3t2e65gh1nba7d8km5jl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414224050602:android:cfff74dcb10b81347363d3",
+        "android_client_info": {
+          "package_name": "com.utsmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414224050602-ukhlsonb58qs3t2e65gh1nba7d8km5jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6MOednpYKns5IrUjduRpq6gil7KVc3Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414224050602-ukhlsonb58qs3t2e65gh1nba7d8km5jl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

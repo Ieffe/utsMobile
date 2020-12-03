@@ -12,107 +12,19 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Button
 } from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import auth from '@react-native-firebase/auth'
+
+
+import Login from './Login'
+import Signup from './Signup'
 
 const Stack = createStackNavigator();
 
-function loginScreen({navigation}){
-  return(
-    <View
-    style={styles.containerForms}
-    >
-      <Text
-        style={styles.loginTextTitle}
-      >
-        RPN
-      </Text>
-      <Text
-        style={styles.loginText}
-      >
-        The Roleplay Network
-      </Text>
-      <TextInput
-        placeholder='E-mail'
-        keyboardType='email-address'
-        placeholderTextColor='white'
-        style={styles.inputs}
-      />
 
-      <TextInput 
-        placeholder='Password'
-        placeholderTextColor='white'
-        secureTextEntry={true}
-        style={styles.inputs}
-      />
 
-      <TouchableOpacity
-        onPress={()  => navigation.push('Home')}
-        style={styles.buttonsConfirm}
-      >
-        <Text 
-          style={styles.buttonTextConfirm}
-        >
-          Login
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Signup')}
-        style ={styles.loginNewAccountContainer}
-      >
-        <Text
-          style = {styles.loginNewAccountText}
-        >
-          Make a new account here!
-        </Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
-
-function signUpScreen({navigation}){
-  return(
-    <View
-      style={styles.containerForms}
-    >
-      <TextInput
-      placeholder='Insert new E-mail'
-      placeholderTextColor='white'
-      style={styles.inputs}
-      
-      />
-      <TextInput
-      placeholder='Insert new password'
-      placeholderTextColor='white'
-      secureTextEntry={true}
-      style={styles.inputs}
-      />
-
-      <TextInput
-      placeholder='Confirm password'
-      placeholderTextColor='white'
-      secureTextEntry={true}
-      style={styles.inputs}
-      />
-
-      <TouchableOpacity 
-        onPress={() => navigation.goBack()}
-        style={styles.buttonsConfirm}
-      >
-        <Text 
-          style={styles.buttonTextConfirm}
-        >
-          Sign-up
-        </Text>
-      </TouchableOpacity>
-    </View>
-    
-  )
-}
 
 function homeScreen({navigation}){
   return(
@@ -141,7 +53,7 @@ function homeScreen({navigation}){
       </TouchableOpacity>
       <TouchableOpacity
         style = {styles.buttonBack}
-        onPress={() => navigation.goBack()}
+        onPress={() => auth().signOut().then(() => navigation.navigate('Login'))}
       >
         <Text
           style = {styles.buttonText}
@@ -185,14 +97,16 @@ function aboutScreen({navigation}){
 function App() {
   return(
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName="Login"
+      >
         <Stack.Screen
           name="Login"
-          component={loginScreen}
+          component={Login}
         />
         <Stack.Screen
           name="Signup"
-          component={signUpScreen}
+          component={Signup}
         />
         <Stack.Screen
           name="Home"
