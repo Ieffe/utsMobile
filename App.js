@@ -20,6 +20,7 @@ import auth from '@react-native-firebase/auth'
 
 import Login from './Login'
 import Signup from './Signup'
+import Home from './Home'
 
 const Stack = createStackNavigator();
 
@@ -110,7 +111,7 @@ function App() {
         />
         <Stack.Screen
           name="Home"
-          component={homeScreen}
+          component={Home}
         />
         <Stack.Screen
           name="About"
