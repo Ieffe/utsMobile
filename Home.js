@@ -8,6 +8,7 @@ import {
   } from 'react-native';
 import auth from '@react-native-firebase/auth'
 import firestore from'@react-native-firebase/firestore'
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 
 export default class Home extends Component{
@@ -28,6 +29,25 @@ export default class Home extends Component{
       this.setState({
         title: '',
         description: ''
+      })
+    }
+
+    handleSelectImage = () => {
+      const options = {
+        quality: 0.5,
+        maxHeight: 200,
+        maxWidth: 200,
+        storageOptions: {
+          skipBackup: true
+        }
+      }
+
+      launchImageLibrary(options, response => {
+        if(response.data){
+          this.setState({
+            image: 'data:image/jpeg;base64,' + response.data
+          })
+        }
       })
     }
 
@@ -56,6 +76,14 @@ export default class Home extends Component{
           onChangeText={this.handleTextInput('description')}
           value = {this.state.description}
         />
+        <TouchableOpacity
+          style= {style.buttonMenu}
+          onPress = {this.handleSelectImage.bind(this)}
+        >
+          <Text>
+            Select Image
+          </Text>
+        </TouchableOpacity>       
         <TouchableOpacity
           onPress={this.handlePost}
         >
