@@ -31,6 +31,12 @@ import { ScrollView } from "react-native-gesture-handler";
           } catch (error) {}
       }
 
+      deletePost = (id) => {
+          firestore().collection('posts').doc(id).delete().then(() => {
+              alert('deleted')
+          })
+      }
+
       render() {
           return(
               <View>
@@ -45,6 +51,14 @@ import { ScrollView } from "react-native-gesture-handler";
                                     style={{height: 200, width:200
                                     }}
                                   />
+
+                                  <TouchableOpacity
+                                    onPress={() => this.deletePost(data.id)}
+                                  >
+                                      <Text>
+
+                                      </Text>
+                                  </TouchableOpacity>
                               </View>
                               
                           )
