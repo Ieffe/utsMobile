@@ -51,12 +51,18 @@ import { ScrollView } from "react-native-gesture-handler";
                                     style={{height: 200, width:200
                                     }}
                                   />
-
+                                  <TouchableOpacity
+                                    onPress={() => this.props.navigation.navgate('Update', {post: data})}
+                                  >
+                                      <Text>
+                                        Edit
+                                      </Text>
+                                  </TouchableOpacity>  
                                   <TouchableOpacity
                                     onPress={() => this.deletePost(data.id)}
                                   >
                                       <Text>
-
+                                        Delete
                                       </Text>
                                   </TouchableOpacity>
                               </View>

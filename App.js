@@ -21,6 +21,7 @@ import auth from '@react-native-firebase/auth'
 import Login from './Login'
 import Signup from './Signup'
 import Home from './Home'
+import Update from './Update'
 
 const Stack = createStackNavigator();
 
@@ -116,6 +117,10 @@ function App() {
         <Stack.Screen
           name="About"
           component={aboutScreen}
+        />
+        <Stack.Screen
+          name="Update"
+          component={Update}
         />
       </Stack.Navigator>
     </NavigationContainer>
